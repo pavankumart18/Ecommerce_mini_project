@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Customer Purchase Prediction</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #f0f2f5;
+        }
+        .container {
+            max-width: 800px;
+            margin-top: 50px;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+        label {
+            font-weight: 500;
+        }
+        .btn-primary {
+            background-color: #1abc9c;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #16a085;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Customer Purchase Prediction</h1>
+        <form method="POST" action="/predict">
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <label>Administrative</label>
+                    <input type="number" name="Administrative" step="0.01" class="form-control" value="5" required>
+                </div>
+                <div class="col-md-4">
+                    <label>Informational</label>
+                    <input type="number" name="Informational" step="0.01" class="form-control" value="3" required>
+                </div>
+                <div class="col-md-4">
+                    <label>ProductRelated</label>
+                    <input type="number" name="ProductRelated" step="0.01" class="form-control" value="20" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label>BounceRates</label>
+                    <input type="number" name="BounceRates" step="0.0001" class="form-control" value="0.02" required>
+                </div>
+                <div class="col-md-4">
+                    <label>ExitRates</label>
+                    <input type="number" name="ExitRates" step="0.0001" class="form-control" value="0.03" required>
+                </div>
+                <div class="col-md-4">
+                    <label>PageValues</label>
+                    <input type="number" name="PageValues" step="0.01" class="form-control" value="10" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label>SpecialDay</label>
+                    <input type="number" name="SpecialDay" step="0.01" class="form-control" value="0">
+                </div>
+                <div class="col-md-4">
+                    <label>Month</label>
+                    <input type="text" name="Month" class="form-control" value="May">
+                </div>
+                <div class="col-md-4">
+                    <label>Operating Systems</label>
+                    <input type="number" name="OperatingSystems" class="form-control" value="2">
+                </div>
+
+                <div class="col-md-4">
+                    <label>Browser</label>
+                    <input type="number" name="Browser" class="form-control" value="1">
+                </div>
+                <div class="col-md-4">
+                    <label>Region</label>
+                    <input type="number" name="Region" class="form-control" value="1">
+                </div>
+                <div class="col-md-4">
+                    <label>TrafficType</label>
+                    <input type="number" name="TrafficType" class="form-control" value="1">
+                </div>
+
+                <div class="col-md-4">
+                    <label>VisitorType</label>
+                    <input type="text" name="VisitorType" class="form-control" value="Returning_Visitor">
+                </div>
+                <div class="col-md-4">
+                    <label>Weekend</label>
+                    <input type="number" name="Weekend" class="form-control" value="0">
+                </div>
+                <div class="col-md-4">
+                    <label>Administrative Duration</label>
+                    <input type="number" name="Administrative_Duration" step="0.01" class="form-control" value="120">
+                </div>
+
+                <div class="col-md-4">
+                    <label>Informational Duration</label>
+                    <input type="number" name="Informational_Duration" step="0.01" class="form-control" value="30">
+                </div>
+                <div class="col-md-4">
+                    <label>ProductRelated Duration</label>
+                    <input type="number" name="ProductRelated_Duration" step="0.01" class="form-control" value="500">
+                </div>
+            </div>
+            <div class="mt-4 text-center">
+                <button type="submit" class="btn btn-primary btn-lg">Predict</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

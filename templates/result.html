@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prediction Result</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #f0f2f5;
+        }
+        .container {
+            max-width: 900px;
+            margin-top: 50px;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        .card {
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+        .card-header {
+            font-weight: 600;
+            background-color: #1abc9c;
+            color: white;
+            font-size: 1.1rem;
+        }
+        .btn-primary {
+            background-color: #1abc9c;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #16a085;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-4">Prediction Result</h1>
+
+        <div class="card">
+            <div class="card-header">Input Values</div>
+            <div class="card-body">
+                <ul>
+                    {% for k, v in input_data.items() %}
+                        <li><strong>{{ k }}:</strong> {{ v }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">Model Prediction</div>
+            <div class="card-body">
+                <h2>{{ prediction }}</h2>
+                <p><strong>Probability:</strong> {{ probability }}%</p>
+            </div>
+        </div>
+
+<!--        <div class="card">-->
+<!--            <div class="card-header">Gemini Insights</div>-->
+<!--            <div class="card-body">-->
+<!--                <p>{{ insight }}</p>-->
+<!--            </div>-->
+<!--        </div>-->
+
+        <div class="text-center mt-3">
+            <a href="/" class="btn btn-primary btn-lg">Predict Another</a>
+        </div>
+    </div>
+</body>
+</html>
